@@ -31,6 +31,7 @@ public class Exer0706 {
         System.out.println("size:" + queue.size());
         System.out.println("isEmpty:" + queue.isEmpty());
 
+
         System.out.println("----------------------------");
 
         MyStack<String> stack = new MyStack<>();
