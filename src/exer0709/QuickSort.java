@@ -79,7 +79,6 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int a[] = getRandomArray(10);
-//        int[] a = new int[]{21, 8, 44, 14, 9, 12, 45, 20, 22, 14};
         printArray(a);
 
         System.out.println("-------------------");
