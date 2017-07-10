@@ -13,28 +13,32 @@ import static exer0709.Utils.swap;
  */
 public class BubbleSort {
 
+    /**
+     * 冒泡排序
+     * @param array
+     */
     public static void bubbleSort(int[] array){
         for (int i = 0; i < array.length-1; i++) {
             for (int j = 0; j < array.length-1-i; j++) {
                 if(array[j] > array[j+1]){
-                    swap(array,j,j+1);
+                    Utils.swap(array,j,j+1);
                 }
             }
-            printArray(array);
+            Utils.printArray(array);
         }
     }
 
 
     public static void main(String[] args) {
-        int[] a = getRandomArray(10);
+        int[] a = Utils.getRandomArray(10);
 
-        printArray(a);
+        Utils.printArray(a);
         System.out.println("-----------------");
 
         bubbleSort(a);
 
         System.out.println("-----------------");
-        printArray(a);
+        Utils.printArray(a);
     }
 }
 

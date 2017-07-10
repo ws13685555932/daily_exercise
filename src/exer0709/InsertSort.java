@@ -7,18 +7,28 @@ import javax.rmi.CORBA.Util;
  */
 public class InsertSort {
 
+    /**
+     * 插入排序
+     * @param a
+     */
     public static void insertSort(int[] a){
+        //第一个元素不用操作，循环从1开始
         for (int i = 1; i < a.length; i++) {
+            //如果当前元素大于前一个元素，那么已经是有序的，不作处理
             if(a[i] > a[i- 1]){
                 continue;
             }else{
-                int ele = a[i];
+                //将当前元素取出
+                int temp = a[i];
+                //在当前元素前逐个查找该元素应该放置的位置
                 for (int j = 0; j < i; j++) {
-                    if(a[j] >= ele){
+                    if(a[j] >= temp){
+                        //当前元素应该被放在下标j的位置，将下标j之后的所有元素往后移位，以把下标j位置空出来
                         for (int k = i; k > j ; k--) {
                             a[k] = a[k-1];
                         }
-                        a[j] = ele;
+                        //将当前元素放在下标j位置
+                        a[j] = temp;
                         break;
                     }
                 }

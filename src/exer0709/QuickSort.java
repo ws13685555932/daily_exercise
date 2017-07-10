@@ -12,6 +12,10 @@ import static exer0709.Utils.printArray;
  */
 public class QuickSort {
 
+    /**
+     * 快速排序，选取最左边元素作为基准元素
+     * @param a
+     */
     public static void quickSort(int[] a){
         sort(a,0,a.length-1);
     }
@@ -20,7 +24,7 @@ public class QuickSort {
         if(left>=right){
             return ;
         }
-
+        //返回
         int pivot = partition(a,left, right);
         sort(a,left,pivot-1);
         sort(a,pivot+1,right);
@@ -28,6 +32,7 @@ public class QuickSort {
 
 
     public static int partition(int[] a,int left,int right){
+        //取最左边的元素作为基准元素
         int pivotValue = a[left];
         int pivot = left;
 
@@ -44,7 +49,10 @@ public class QuickSort {
         return right;
     }
 
-
+    /**
+     * 快速排序，选取最右边的元素作为基准元素
+     * @param a
+     */
     public static void quickSort2(int[] a){
         sort2(a,0,a.length-1);
     }
@@ -61,6 +69,7 @@ public class QuickSort {
     }
 
     private static int partition2(int[] a, int left, int right) {
+        //最右元素作为基准元素
         int pivotValue = a[right];
         int pivot = right;
 
@@ -89,4 +98,6 @@ public class QuickSort {
 
         System.out.println(isSorted(a));
     }
+
+
 }

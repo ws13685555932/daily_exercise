@@ -7,23 +7,35 @@ import static exer0709.Utils.*;
  */
 public class SelectSort {
 
+    /**
+     * 选择排序，每次循环选择最小的进行交换
+     * @param a
+     */
     public static void selectSort(int[] a) {
         for (int i = 0; i < a.length; i++) {
+            //记录当前循环中最小元素的下标
             int minIndex = i;
             for (int j = i + 1; j < a.length; j++) {
                 if (a[j] < a[minIndex]) {
                     minIndex = j;
                 }
             }
-
-            swap(a, minIndex, i);
-            printArray(a);
+            //交换
+            Utils.swap(a, minIndex, i);
+            Utils.printArray(a);
         }
     }
 
+    /**
+     * 选择排序优化，一次循环选择最小值和最大值做两次交换
+     * @param a
+     */
     public static void selectSortImpv(int[] a) {
+        //循环次数为原先的一半
         for (int i = 0; i < a.length / 2; i++) {
+            //最小元素的下标
             int minIndex = i;
+            //最大元素的下标
             int maxIndex = i;
             for (int j = i + 1; j < a.length - i; j++) {
                 if (a[j] < a[minIndex]) {
@@ -33,32 +45,39 @@ public class SelectSort {
                     maxIndex = j;
                 }
             }
+
             System.out.println("min:" + minIndex + "---max:" + maxIndex);
-            swap(a, minIndex, i);
+            //交换最小元素
+            Utils.swap(a, minIndex, i);
+            /**
+             * 如果maxIndex处于当前循环被交换位置，比如：
+             *          2 | 45 23 4 15 | 87
+             * 已排序部分  | 未排序部分   |已排序部分
+             * minIndex = 3 , maxIndex = 1
+             * 先将45与最小值4交换，交换后，
+             *          2  4  23  45  15  87
+             * 这时最大值下标1就不是最大值了，最大值应该是minIndex所在位置
+             */
             if (maxIndex == i) {
-                swap(a, a.length - i - 1, minIndex);
+                Utils.swap(a, a.length - i - 1, minIndex);
             } else {
-                swap(a, a.length - i - 1, maxIndex);
+                Utils.swap(a, a.length - i - 1, maxIndex);
             }
 
-            printArray(a);
+            Utils.printArray(a);
         }
     }
 
     public static void main(String[] args) {
-        int a[] = getRandomArray(10);
-//        int[] a = new int[]{21, 8, 44, 14, 9, 12, 45, 20, 22, 14};
-        printArray(a);
+        int a[] = Utils.getRandomArray(10);
+        Utils.printArray(a);
 
         System.out.println("-------------------");
         selectSortImpv(a);
         System.out.println("-------------------");
 
-        printArray(a);
+        Utils.printArray(a);
 
         System.out.println(isSorted(a));
-//        if(isSorted(a)){
-//            System.out.println("排序成功");
-//        }
     }
 }
