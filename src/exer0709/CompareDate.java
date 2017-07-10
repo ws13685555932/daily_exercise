@@ -8,8 +8,7 @@ import java.util.*;
  * 利用Comparable接口与Comparator接口进行排序
  * Comparabel接口用于内部排序，即在要排序的类实现接口，定义比较大小的方法
  * Comparator接口用于外部排序，在排序过程中new一个比较器，在比较器中定义两个对象比较大小的规则
- * Created by wangsheng on 2017/7/10.
- *
+ * Created by wangsheng on 2017/7/10
  */
 
 class DateString implements Comparable<DateString> {
