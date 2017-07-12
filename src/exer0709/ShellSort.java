@@ -45,7 +45,7 @@ public class ShellSort {
     }
 
     public static void main(String[] args) {
-        int a[] = getRandomArray(10);
+        int a[] = getRandomArray(11);
         printArray(a);
 
         System.out.println("-------------------");

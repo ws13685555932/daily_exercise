@@ -24,7 +24,7 @@ public class BubbleSort {
                     Utils.swap(array,j,j+1);
                 }
             }
-            Utils.printArray(array);
+//            Utils.printArray(array);
         }
     }
 
