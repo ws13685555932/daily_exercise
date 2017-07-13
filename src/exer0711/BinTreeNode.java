@@ -15,11 +15,11 @@ public class BinTreeNode {
     }
 
     public BinTreeNode(){
-        this(0);
+
     }
 
     @Override
     public String toString() {
-        return "data:" + this.data;
+        return data+"";
     }
 }
