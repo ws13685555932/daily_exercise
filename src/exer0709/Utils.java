@@ -23,9 +23,18 @@ public class Utils {
      * 打印数组
      * @param array
      */
+    public static void printArray(int[] array,int min,int iIndex){
+        System.out.printf(" %1d ",iIndex);
+        System.out.printf("  %1d  ",min);
+        for (int i = 0; i < array.length; i++) {
+            System.out.printf(" %2d ",array[i]);
+        }
+        System.out.println();
+    }
+
     public static void printArray(int[] array){
         for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+            System.out.printf(" %2d ",array[i]);
         }
         System.out.println();
     }
@@ -58,3 +67,4 @@ public class Utils {
         return true;
     }
 }
+

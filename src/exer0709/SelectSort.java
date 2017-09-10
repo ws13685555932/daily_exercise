@@ -13,6 +13,7 @@ public class SelectSort {
      */
     public static void selectSort(int[] a) {
         for (int i = 0; i < a.length; i++) {
+//            Utils.printArray(a);
             //记录当前循环中最小元素的下标
             int minIndex = i;
             for (int j = i + 1; j < a.length; j++) {
@@ -22,7 +23,7 @@ public class SelectSort {
             }
             //交换
             Utils.swap(a, minIndex, i);
-            Utils.printArray(a);
+            Utils.printArray(a,minIndex,i);
         }
     }
 
@@ -69,15 +70,29 @@ public class SelectSort {
     }
 
     public static void main(String[] args) {
-        int a[] = Utils.getRandomArray(10);
+//        int a[] = Utils.getRandomArray(10);
+        int a[] = {40  ,34 , 19 , 18 , 47 , 42 ,  4 , 24 ,  6 , 11 };
         Utils.printArray(a);
 
         System.out.println("-------------------");
-        selectSortImpv(a);
+//        selectSort(a);
+        select_sort(a);
         System.out.println("-------------------");
 
         Utils.printArray(a);
 
         System.out.println(isSorted(a));
+    }
+
+    public static void select_sort(int[] a){
+        for (int i = 0; i < a.length - 1; i++) {
+            int min = i;
+            for (int j = i+1; j < a.length; j++) {
+                if(a[j] < a[min]){
+                    min = j;
+                }
+            }
+            swap(a,min,i);
+        }
     }
 }

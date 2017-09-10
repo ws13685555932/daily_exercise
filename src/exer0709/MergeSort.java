@@ -15,10 +15,10 @@ public class MergeSort {
 
 
     private static void sort(int[] a,int left,int right){
-        if(left >= right){
+        if(left == right){
             return ;
         }
-
+        System.out.println("sort(a," + left + "," + right +")");
         int mid = (left + right) / 2;
 
         //对左半边进行排序
@@ -29,7 +29,15 @@ public class MergeSort {
         merge(a,left,mid,right);
     }
 
+    /**
+     * 归并操作
+     * @param a     数组
+     * @param left  第一个子数组首元素下标
+     * @param mid   第一个子数组尾元素下标
+     * @param right 第二个子数组尾元素下标
+     */
     private static void merge(int[] a, int left, int mid, int right) {
+        System.out.println("merge(a,"+left+","+mid+","+right+")");
         //临时数组用于保存合并后的数组
         int[] temp = new int[right - left +1];
         //指向左边数组的指针
@@ -73,7 +81,7 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] a = Utils.getRandomArray(10);
+        int[] a = Utils.getRandomArray(16);
 
         Utils.printArray(a);
         System.out.println("----------------");

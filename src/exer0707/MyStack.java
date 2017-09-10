@@ -1,16 +1,11 @@
 package exer0707;
 
-import sun.invoke.empty.Empty;
-
-import javax.swing.text.html.HTMLDocument;
-import java.util.ArrayList;
-import java.util.function.DoubleToIntFunction;
-
 /**
  * Created by wangsheng on 2017/7/7.
  */
 
-public class Stack<T> {
+public class MyStack
+        <T> {
     //数组用来存放数据
     T[] a;
     //栈顶指针
@@ -19,7 +14,7 @@ public class Stack<T> {
     int maxLength;
 
     //构造方法，设定数组大小初始值为4，栈顶指针指向空
-    public Stack() {
+    public MyStack() {
         maxLength = 4;
         a = (T[]) new Object[maxLength];
         index = -1;
@@ -130,7 +125,7 @@ public class Stack<T> {
 
     //测试
     public static void main(String[] args) {
-        Stack<String> stringStack = new Stack<>();
+        MyStack<String> stringStack = new MyStack<>();
         stringStack.push("hello");
         stringStack.push("world");
         stringStack.push("java");

@@ -43,10 +43,23 @@ public class InsertSort {
 
         Utils.printArray(a);
         System.out.println("----------------");
-        insertSort(a);
+        insert_sort(a);
         System.out.println("----------------");
 
         Utils.printArray(a);
         System.out.println(Utils.isSorted(a));
+    }
+
+    public static void insert_sort(int[] a){
+        for (int i = 1; i < a.length; i++) {
+            int temp = a[i];
+            if(a[i] < a[i-1]){
+                while(i>0 && temp < a[i-1]){
+                    a[i] = a[i-1];
+                    i--;
+                }
+            }
+            a[i] = temp;
+        }
     }
 }
